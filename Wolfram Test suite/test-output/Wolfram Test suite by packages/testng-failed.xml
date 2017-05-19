@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Wolfram Test suite by packages]">
+  <test name="WolframTestSuite(failed)">
+    <classes>
+      <class name="WolframTestSuite.WolframCloudTestSuite">
+        <methods>
+          <include name="tryLogin"/>
+          <include name="setUp"/>
+          <include name="testLaunch"/>
+          <include name="tryHomescreen"/>
+          <include name="tryRegistration"/>
+          <include name="tryNotebook"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- WolframTestSuite.WolframCloudTestSuite -->
+    </classes>
+  </test> <!-- WolframTestSuite(failed) -->
+</suite> <!-- Failed suite [Wolfram Test suite by packages] -->
