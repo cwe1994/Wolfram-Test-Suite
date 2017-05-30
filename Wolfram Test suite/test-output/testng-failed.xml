@@ -11,7 +11,6 @@
           <include name="tryRegistration"/>
           <include name="tryNotebook"/>
           <include name="cleanUp"/>
-          <include name="suiteLaunch"/>
         </methods>
       </class> <!-- WolframTestSuite.WolframCloudTestSuite -->
     </classes>

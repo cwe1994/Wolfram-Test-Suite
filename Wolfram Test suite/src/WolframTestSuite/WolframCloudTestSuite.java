@@ -30,7 +30,7 @@ public class WolframCloudTestSuite {
 	
 	@BeforeSuite
 	public void setUp() throws Exception{
-		File file = new File("C:/Selenium/chromedriver.exe");
+		File file = new File("C:/Windows/System32/node_modules/chromedriver/lib/chromedriver/chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 		driver = new ChromeDriver();
 		baseURL = "https://www.wolframcloud.com/";
@@ -47,11 +47,11 @@ public class WolframCloudTestSuite {
 	
 	//Tests the launch of the Wolfram Cloud Site
 	@Test(groups={"functest", "usrexptest"}, priority=1)
-	public void suiteLaunch(){
+	public void siteLaunch(){
 		driver.get(baseURL); //waits for page to load
 		System.out.println("URL gotten.");
 		try{
-			this.myCloudPage = new TestCloudPage(driver);
+			myCloudPage = new TestCloudPage(this.driver);
 		}catch(NoSuchElementException e){
 			System.out.println("CloudPage did not load properly");
 		}
@@ -64,7 +64,7 @@ public class WolframCloudTestSuite {
 	@Test(groups={"functest", "usrexptest"}, priority=2)
 	public void tryLogin(){
 		try{
-			this.myLoginPage = myCloudPage.getLoginPage();
+			myLoginPage = myCloudPage.getLoginPage();
 		}
 		catch(NoSuchElementException e){
 			System.out.println("Login page could not be created");
@@ -76,7 +76,7 @@ public class WolframCloudTestSuite {
 	@Test(groups={"functest",  "usrexptest"}, priority=3)
 	public void tryRegistration(){
 		try{
-			this.myRegistrationPage = myLoginPage.getRegistrationPage();
+			myRegistrationPage = myLoginPage.getRegistrationPage();
 		}
 		catch(NoSuchElementException e){
 			System.out.println("Registration page failed to load");
@@ -115,7 +115,7 @@ public class WolframCloudTestSuite {
 		
 		//check the valid entries
 		try{
-			this.myHomescreen = myRegistrationPage.register(info);
+			myHomescreen = myRegistrationPage.register(info);
 		}
 		catch(NoSuchElementException e){
 			System.out.println("Could not register properly");
@@ -143,7 +143,7 @@ public class WolframCloudTestSuite {
 		String newDocType = "Notebook";
 		
 		try{
-			this.myNotebook = myHomescreen.createNb(newDocType);
+			myNotebook = myHomescreen.createNb(newDocType);
 		}
 		catch(NoSuchElementException e){
 			System.out.println(newDocType + "cannot be created");

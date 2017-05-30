@@ -12,7 +12,7 @@ public class TestLoginPage {
 	public TestLoginPage(WebDriver driver){
 		this.driver = driver;
 		//verify "create id" link is present
-		if(this.driver.findElements(By.id("createAccount")).size() == 0){
+		if(this.driver.findElements(By.id("signIn")).size() == 0){
 			throw new NoSuchElementException();
 		}
 	}

@@ -12,13 +12,13 @@ public class TestCloudPage {
 	public TestCloudPage(WebDriver driver){
 		this.driver = driver;
 		//verify the Programming Cloud icon is present
-		if (this.driver.findElements(By.id("programming-tile")).size() == 0){
+		if (this.driver.findElements(By.id("Wolfram Cloud")).size() == 0){
 			throw new NoSuchElementException("CloudPage: Programming Cloud icon is not present");
 		}
 	}
 	
 	public TestLoginPage getLoginPage(){
-		driver.findElement(By.id("programming-tile")).click(); // clicks programming cloud icon
+		driver.findElement(By.id("development-tile")).click(); // clicks development platform icon
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); //what if timeout
 		return new TestLoginPage(driver); //returns a LoginPage object
 	}
